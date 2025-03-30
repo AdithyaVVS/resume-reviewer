@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <style>
+    .st0{fill:#F5F7FB;}
+    .st1{fill:#E1E6EF;}
+    .st2{fill:#4A6CF7;}
+    .st3{fill:#6C757D;}
+    .st4{fill:#FFFFFF;}
+    .st5{fill:none;stroke:#4A6CF7;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+  </style>
+  
+  <!-- Background -->
+  <rect class="st0" width="400" height="300" rx="10" ry="10"/>
+  
+  <!-- Resume Document -->
+  <rect class="st1" x="50" y="50" width="150" height="200" rx="5" ry="5"/>
+  <rect class="st4" x="60" y="60" width="130" height="180" rx="2" ry="2"/>
+  
+  <!-- Resume Content -->
+  <rect class="st2" x="70" y="70" width="100" height="10" rx="2" ry="2"/>
+  <rect class="st3" x="70" y="90" width="110" height="5" rx="2" ry="2"/>
+  <rect class="st3" x="70" y="100" width="90" height="5" rx="2" ry="2"/>
+  
+  <rect class="st2" x="70" y="120" width="80" height="8" rx="2" ry="2"/>
+  <rect class="st3" x="70" y="135" width="110" height="5" rx="2" ry="2"/>
+  <rect class="st3" x="70" y="145" width="100" height="5" rx="2" ry="2"/>
+  <rect class="st3" x="70" y="155" width="90" height="5" rx="2" ry="2"/>
+  
+  <rect class="st2" x="70" y="175" width="80" height="8" rx="2" ry="2"/>
+  <rect class="st3" x="70" y="190" width="110" height="5" rx="2" ry="2"/>
+  <rect class="st3" x="70" y="200" width="100" height="5" rx="2" ry="2"/>
+  <rect class="st3" x="70" y="210" width="90" height="5" rx="2" ry="2"/>
+  
+  <!-- Analysis -->
+  <rect class="st2" x="230" y="50" width="120" height="200" rx="5" ry="5"/>
+  <rect class="st4" x="240" y="60" width="100" height="180" rx="2" ry="2"/>
+  
+  <!-- Analysis Content -->
+  <rect class="st2" x="250" y="70" width="80" height="8" rx="2" ry="2"/>
+  <rect class="st3" x="250" y="85" width="80" height="4" rx="2" ry="2"/>
+  <rect class="st3" x="250" y="95" width="70" height="4" rx="2" ry="2"/>
+  
+  <rect class="st2" x="250" y="110" width="60" height="6" rx="2" ry="2"/>
+  <rect class="st3" x="250" y="122" width="80" height="4" rx="2" ry="2"/>
+  <rect class="st3" x="250" y="132" width="70" height="4" rx="2" ry="2"/>
+  
+  <rect class="st2" x="250" y="150" width="60" height="6" rx="2" ry="2"/>
+  <rect class="st3" x="250" y="162" width="80" height="4" rx="2" ry="2"/>
+  <rect class="st3" x="250" y="172" width="70" height="4" rx="2" ry="2"/>
+  
+  <rect class="st2" x="250" y="190" width="60" height="6" rx="2" ry="2"/>
+  <rect class="st3" x="250" y="202" width="80" height="4" rx="2" ry="2"/>
+  <rect class="st3" x="250" y="212" width="70" height="4" rx="2" ry="2"/>
+  
+  <!-- Connection Lines -->
+  <path class="st5" d="M200 80 L230 80"/>
+  <path class="st5" d="M200 140 L230 140"/>
+  <path class="st5" d="M200 200 L230 200"/>
+  
+  <!-- AI Icon -->
+  <circle class="st2" cx="320" cy="30" r="15"/>
+  <path class="st4" d="M315 30 L325 30 M320 25 L320 35"/>
+</svg>

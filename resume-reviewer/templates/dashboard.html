@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard - Resume Reviewer{% endblock %}
+
+{% block content %}
+<div class="dashboard-container">
+    <div class="dashboard-header">
+        <h1>Welcome, {{ user.username }}!</h1>
+        <a href="{{ url_for('upload_resume') }}" class="btn btn-primary">Upload New Resume</a>
+    </div>
+
+    <div class="dashboard-content">
+        {% if resumes %}
+        <h2>Your Resumes</h2>
+        <div class="resume-list">
+            {% for resume in resumes %}
+            <div class="resume-card">
+                <div class="resume-info">
+                    <h3>{{ resume.filename }}</h3>
+                    <p class="upload-date">Uploaded on {{ resume.upload_date.strftime('%B %d, %Y') }}</p>
+                </div>
+                <div class="resume-actions">
+                    <a href="{{ url_for('view_analysis', resume_id=resume.id) }}" class="btn btn-secondary">View Analysis</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="empty-state">
+            <img src="{{ url_for('static', filename='img/empty-state.svg') }}" alt="No resumes">
+            <h2>No Resumes Yet</h2>
+            <p>Upload your first resume to get AI-powered feedback and suggestions.</p>
+            <a href="{{ url_for('upload_resume') }}" class="btn btn-primary">Upload Resume</a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

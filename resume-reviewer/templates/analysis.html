@@ -1,0 +1,262 @@
+{% extends 'base.html' %}
+
+{% block title %}Resume Analysis - Resume Reviewer{% endblock %}
+
+{% block content %}
+<div class="analysis-container">
+    <div class="analysis-header">
+        <h1>Resume Analysis</h1>
+        <div class="resume-info">
+            <p><strong>Filename:</strong> {{ resume.filename }}</p>
+            <p><strong>Uploaded on:</strong> {{ resume.upload_date.strftime('%B %d, %Y') }}</p>
+        </div>
+        <a href="{{ url_for('dashboard') }}" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+    </div>
+    
+    <div class="analysis-content">
+        <div class="analysis-sections">
+            <div class="analysis-section">
+                <h2>Structure & Formatting</h2>
+                <div class="section-content">
+                    <div class="strengths">
+                        <h3>Strengths</h3>
+                        <ul>
+                            {% if analysis.structure.strengths %}
+                                {% for strength in analysis.structure.strengths %}
+                                <li>{{ strength }}</li>
+                                {% endfor %}
+                            {% else %}
+                                <li>No strengths identified</li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                    <div class="improvements">
+                        <h3>Areas for Improvement</h3>
+                        <ul>
+                            {% if analysis.structure.improvements %}
+                                {% for improvement in analysis.structure.improvements %}
+                                <li>{{ improvement }}</li>
+                                {% endfor %}
+                            {% else %}
+                                <li>No improvements needed</li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                    <div class="suggestions">
+                        <h3>Suggestions</h3>
+                        <ul>
+                            {% if analysis.structure.suggestions %}
+                                {% for suggestion in analysis.structure.suggestions %}
+                                <li>{{ suggestion }}</li>
+                                {% endfor %}
+                            {% else %}
+                                <li>No suggestions available</li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="analysis-section">
+                <h2>Skills Assessment</h2>
+                <div class="section-content">
+                    <div class="identified-skills">
+                        <h3>Identified Skills</h3>
+                        <div class="skill-tags">
+                            {% if analysis.skills.identified_skills %}
+                                {% for skill in analysis.skills.identified_skills %}
+                                <span class="skill-tag">{{ skill }}</span>
+                                {% endfor %}
+                            {% else %}
+                                <p>No skills identified</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="strengths">
+                        <h3>Strengths</h3>
+                        <ul>
+                            {% if analysis.skills.strengths %}
+                                {% for strength in analysis.skills.strengths %}
+                                <li>{{ strength }}</li>
+                                {% endfor %}
+                            {% else %}
+                                <li>No strengths identified</li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                    <div class="improvements">
+                        <h3>Areas for Improvement</h3>
+                        <ul>
+                            {% if analysis.skills.improvements %}
+                                {% for improvement in analysis.skills.improvements %}
+                                <li>{{ improvement }}</li>
+                                {% endfor %}
+                            {% else %}
+                                <li>No improvements needed</li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                    <div class="suggestions">
+                        <h3>Suggestions</h3>
+                        <ul>
+                            {% if analysis.skills.suggestions %}
+                                {% for suggestion in analysis.skills.suggestions %}
+                                <li>{{ suggestion }}</li>
+                                {% endfor %}
+                            {% else %}
+                                <li>No suggestions available</li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="analysis-section">
+                <h2>Education</h2>
+                <div class="section-content">
+                    <div class="education-entries">
+                        <h3>Education History</h3>
+                        {% if analysis.education.entries %}
+                            {% for entry in analysis.education.entries %}
+                            <p class="entry">{{ entry }}</p>
+                            {% endfor %}
+                        {% else %}
+                            <p class="entry">No education history found</p>
+                        {% endif %}
+                    </div>
+                    <div class="strengths">
+                        <h3>Strengths</h3>
+                        <ul>
+                            {% if analysis.education.strengths %}
+                                {% for strength in analysis.education.strengths %}
+                                <li>{{ strength }}</li>
+                                {% endfor %}
+                            {% else %}
+                                <li>No strengths identified</li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                    <div class="improvements">
+                        <h3>Areas for Improvement</h3>
+                        <ul>
+                            {% if analysis.education.improvements %}
+                                {% for improvement in analysis.education.improvements %}
+                                <li>{{ improvement }}</li>
+                                {% endfor %}
+                            {% else %}
+                                <li>No improvements needed</li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                    <div class="suggestions">
+                        <h3>Suggestions</h3>
+                        <ul>
+                            {% if analysis.education.suggestions %}
+                                {% for suggestion in analysis.education.suggestions %}
+                                <li>{{ suggestion }}</li>
+                                {% endfor %}
+                            {% else %}
+                                <li>No suggestions available</li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="analysis-section">
+                <h2>Experience</h2>
+                <div class="section-content">
+                    <div class="experience-entries">
+                        <h3>Work History</h3>
+                        {% if analysis.experience.entries %}
+                            {% for entry in analysis.experience.entries %}
+                            <p class="entry">{{ entry }}</p>
+                            {% endfor %}
+                        {% else %}
+                            <p class="entry">No work history found</p>
+                        {% endif %}
+                    </div>
+                    <div class="strengths">
+                        <h3>Strengths</h3>
+                        <ul>
+                            {% if analysis.experience.strengths %}
+                                {% for strength in analysis.experience.strengths %}
+                                <li>{{ strength }}</li>
+                                {% endfor %}
+                            {% else %}
+                                <li>No strengths identified</li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                    <div class="improvements">
+                        <h3>Areas for Improvement</h3>
+                        <ul>
+                            {% if analysis.experience.improvements %}
+                                {% for improvement in analysis.experience.improvements %}
+                                <li>{{ improvement }}</li>
+                                {% endfor %}
+                            {% else %}
+                                <li>No improvements needed</li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                    <div class="suggestions">
+                        <h3>Suggestions</h3>
+                        <ul>
+                            {% if analysis.experience.suggestions %}
+                                {% for suggestion in analysis.experience.suggestions %}
+                                <li>{{ suggestion }}</li>
+                                {% endfor %}
+                            {% else %}
+                                <li>No suggestions available</li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="analysis-section">
+                <h2>ATS Compatibility</h2>
+                <div class="section-content">
+                    <div class="strengths">
+                        <h3>Strengths</h3>
+                        <ul>
+                            {% if analysis.ats.strengths %}
+                                {% for strength in analysis.ats.strengths %}
+                                <li>{{ strength }}</li>
+                                {% endfor %}
+                            {% else %}
+                                <li>No strengths identified</li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                    <div class="improvements">
+                        <h3>Areas for Improvement</h3>
+                        <ul>
+                            {% if analysis.ats.improvements %}
+                                {% for improvement in analysis.ats.improvements %}
+                                <li>{{ improvement }}</li>
+                                {% endfor %}
+                            {% else %}
+                                <li>No improvements needed</li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                    <div class="suggestions">
+                        <h3>Suggestions</h3>
+                        <ul>
+                            {% if analysis.ats.suggestions %}
+                                {% for suggestion in analysis.ats.suggestions %}
+                                <li>{{ suggestion }}</li>
+                                {% endfor %}
+                            {% else %}
+                                <li>No suggestions available</li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

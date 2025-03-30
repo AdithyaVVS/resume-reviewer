@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block title %}Upload Resume - Resume Reviewer{% endblock %}
+
+{% block content %}
+<div class="upload-container">
+    <div class="upload-card">
+        <h2>Upload Your Resume</h2>
+        <p class="upload-info">Upload your resume in PDF, DOCX, or TXT format for AI-powered analysis.</p>
+        
+        <form method="POST" action="{{ url_for('upload_resume') }}" enctype="multipart/form-data">
+            <div class="file-upload-area">
+                <label for="resume" class="file-upload-label">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <span>Choose a file or drag it here</span>
+                </label>
+                <input type="file" id="resume" name="resume" accept=".pdf,.docx,.txt" required>
+                <div class="file-info" id="file-info">No file selected</div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-block">Analyze Resume</button>
+        </form>
+        
+        <div class="upload-tips">
+            <h3>Tips for Better Analysis</h3>
+            <ul>
+                <li>Make sure your resume is up-to-date</li>
+                <li>Ensure text is properly formatted and readable</li>
+                <li>Include relevant skills and experience</li>
+                <li>PDF format typically works best for analysis</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% block extra_js %}
+<script>
+    document.getElementById('resume').addEventListener('change', function(e) {
+        const fileName = e.target.files[0] ? e.target.files[0].name : 'No file selected';
+        document.getElementById('file-info').textContent = fileName;
+        
+        if (fileName !== 'No file selected') {
+            document.querySelector('.file-upload-label').classList.add('file-selected');
+        } else {
+            document.querySelector('.file-upload-label').classList.remove('file-selected');
+        }
+    });
+    
+    // Drag and drop functionality
+    const dropArea = document.querySelector('.file-upload-area');
+    
+    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+        dropArea.addEventListener(eventName, preventDefaults, false);
+    });
+    
+    function preventDefaults(e) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+    
+    ['dragenter', 'dragover'].forEach(eventName => {
+        dropArea.addEventListener(eventName, highlight, false);
+    });
+    
+    ['dragleave', 'drop'].forEach(eventName => {
+        dropArea.addEventListener(eventName, unhighlight, false);
+    });
+    
+    function highlight() {
+        dropArea.classList.add('highlight');
+    }
+    
+    function unhighlight() {
+        dropArea.classList.remove('highlight');
+    }
+    
+    dropArea.addEventListener('drop', handleDrop, false);
+    
+    function handleDrop(e) {
+        const dt = e.dataTransfer;
+        const files = dt.files;
+        document.getElementById('resume').files = files;
+        
+        const fileName = files[0] ? files[0].name : 'No file selected';
+        document.getElementById('file-info').textContent = fileName;
+        
+        if (fileName !== 'No file selected') {
+            document.querySelector('.file-upload-label').classList.add('file-selected');
+        }
+    }
+</script>
+{% endblock %}
+
+{% endblock %}

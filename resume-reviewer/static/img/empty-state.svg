@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <style>
+    .st0{fill:#F5F7FB;}
+    .st1{fill:#E1E6EF;}
+    .st2{fill:#4A6CF7;}
+    .st3{fill:#6C757D;}
+  </style>
+  <rect class="st0" width="200" height="200" rx="10" ry="10"/>
+  <rect class="st1" x="40" y="40" width="120" height="140" rx="5" ry="5"/>
+  <rect class="st2" x="60" y="60" width="80" height="10" rx="2" ry="2"/>
+  <rect class="st3" x="60" y="80" width="80" height="5" rx="2" ry="2"/>
+  <rect class="st3" x="60" y="90" width="60" height="5" rx="2" ry="2"/>
+  <rect class="st3" x="60" y="100" width="70" height="5" rx="2" ry="2"/>
+  <rect class="st2" x="60" y="120" width="80" height="10" rx="2" ry="2"/>
+  <rect class="st3" x="60" y="140" width="80" height="5" rx="2" ry="2"/>
+  <rect class="st3" x="60" y="150" width="60" height="5" rx="2" ry="2"/>
+  <circle class="st2" cx="150" cy="50" r="20"/>
+  <path class="st0" d="M145 50 L155 50 M150 45 L150 55"/>
+</svg>
